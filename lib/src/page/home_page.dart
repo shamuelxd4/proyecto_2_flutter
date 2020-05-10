@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
       builder: (context, AsyncSnapshot<List<dynamic>> snapshot){
 
         return ListView(
-          children: _listaItems( snapshot.data ),
+          children: _listaItems( snapshot.data, context),
         );
 
       },
@@ -34,18 +34,26 @@ class HomePage extends StatelessWidget {
     
   }
       
-  List<Widget> _listaItems( List<dynamic> data) {
+  List<Widget> _listaItems( List<dynamic> data, BuildContext context) {
     
     final List<Widget> opciones = [];
 
-    data.forEach((element) {
+    data.forEach((opt) {
       
       final widgetTemp = ListTile(
-        title: Text(element['texto']),
-        leading: getIcon(element['icon']),
+        title: Text(opt['texto']),
+        leading: getIcon(opt['icon']),
         trailing: Icon(Icons.arrow_right),
         onTap: () {
-          
+
+          Navigator.pushNamed(context, opt['ruta']);
+          /*
+          final route = MaterialPageRoute(
+            builder: (context) => AlertPage()
+          );
+
+          Navigator.push(context, route);
+          */
         },
       );
 

@@ -15,7 +15,7 @@ class HomePageTemp extends StatelessWidget {
       ),
     );
   }
-
+/*
   List<Widget> _crearItems(){
 
     List<Widget> lista = new List<Widget>();
@@ -30,7 +30,7 @@ class HomePageTemp extends StatelessWidget {
     }
     return lista;
   }
-
+*/
   List<Widget> _crearItemsCorta() {
     return opciones.map(( item ){
       return Column(
