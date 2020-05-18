@@ -34,7 +34,23 @@ class AlertPage extends StatelessWidget {
       builder: (context) {
         return AlertDialog(
           title: Text('titulo'),
-          content: Column(),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Text('este es el contenido de la caja de a alerta'),
+              FlutterLogo(size: 100.0,)
+            ],
+          ),
+          actions: <Widget>[
+            FlatButton(
+                onPressed: (){},
+                child: Text('cancelar')
+            ),
+            FlatButton(
+                onPressed: (){},
+                child: Text('ok')
+            ),
+          ],
         );
       } ,
     );
